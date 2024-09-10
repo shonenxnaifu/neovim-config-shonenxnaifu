@@ -24,7 +24,7 @@ return {
 
     local sources = {
       diagnostics.checkmake,
-      formatting.prettier.with { filetypes = { 'html', 'json', 'yaml', 'markdown' } },
+      formatting.prettier,
       formatting.stylua,
       formatting.shfmt.with { args = { '-i', '4' } },
       formatting.terraform_fmt,
@@ -32,12 +32,13 @@ return {
       require 'none-ls.formatting.ruff_format',
     }
 
-    local augroup = vim.api.nvim_create_augroup('LspFormatting', {})
+    -- local augroup = vim.api.nvim_create_augroup('LspFormatting', {})
     null_ls.setup {
       -- debug = true, -- Enable debug mode. Inspect logs with :NullLsLog.
       sources = sources,
       -- you can reuse a shared lspconfig on_attach callback here
-      on_attach = function(client, bufnr)
+      -- this is for autoformatting
+      --[[ on_attach = function(client, bufnr)
         if client.supports_method 'textDocument/formatting' then
           vim.api.nvim_clear_autocmds { group = augroup, buffer = bufnr }
           vim.api.nvim_create_autocmd('BufWritePre', {
@@ -48,7 +49,8 @@ return {
             end,
           })
         end
-      end,
+      end,--]]
     }
+    vim.keymap.set('n', '<leader>gf', vim.lsp.buf.format, {})
   end,
 }
