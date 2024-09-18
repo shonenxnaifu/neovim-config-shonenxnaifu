@@ -18,6 +18,7 @@ return {
         'shfmt', -- Shell formatter
         'checkmake', -- linter for Makefiles
         'ruff', -- Python linter and formatter
+        'gofmt', -- GO formatter
       },
       automatic_installation = true,
     }
