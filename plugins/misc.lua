@@ -41,4 +41,9 @@ return {
       require('colorizer').setup()
     end,
   },
+  {
+    -- Comment Toggle
+    'numToStr/Comment.nvim',
+    opts = {}
+  }
 }
