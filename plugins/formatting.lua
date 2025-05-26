@@ -2,7 +2,7 @@ return {
   'nvimtools/none-ls.nvim',
   dependencies = {
     'nvimtools/none-ls-extras.nvim',
-    'jayp0521/mason-null-ls.nvim', -- ensure dependencies are installed
+    'jay-babu/mason-null-ls.nvim', -- ensure dependencies are installed
   },
   config = function()
     local null_ls = require 'null-ls'
@@ -18,7 +18,7 @@ return {
         'shfmt', -- Shell formatter
         'checkmake', -- linter for Makefiles
         'ruff', -- Python linter and formatter
-        'gofmt', -- GO formatter
+        'gofumpt', -- GO formatter
       },
       automatic_installation = true,
     }
