@@ -62,6 +62,9 @@ return {
         --  To jump back, press <C-t>.
         map('gd', require('telescope.builtin').lsp_definitions, '[G]oto [D]efinition')
 
+        -- Show hover information in a floating window
+        map('K', vim.lsp.buf.hover, 'Hover Symbol')
+
         -- Find references for the word under your cursor.
         map('gr', require('telescope.builtin').lsp_references, '[G]oto [R]eferences')
 
