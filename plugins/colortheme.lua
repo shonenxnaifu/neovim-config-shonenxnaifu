@@ -35,6 +35,11 @@ return {
   config = function()
     require('catppuccin').setup {
       flavour = 'macchiato',
+      -- custom_highlights = function (colors)
+      --   return {
+      --     AlphaHeader = { fg = colors.purple }
+      --   }
+      -- end,
     }
 
     vim.cmd.colorscheme 'catppuccin'
